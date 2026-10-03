@@ -199,13 +199,6 @@ export function solveTrilateration(
 
   // Construct linearized system A * p = b
   // 2*(x_i - x_m)*x + 2*(y_i - y_m)*y = (x_i^2 + y_i^2 - d_i^2) - (x_m^2 + y_m^2 - d_m^2)
-  let a00 = 0,
-    a01 = 0,
-    a10 = 0,
-    a11 = 0;
-  let b0 = 0,
-    b1 = 0;
-
   // Use first two pairs relative to bm
   const b1_node = valid[0];
   const b2_node = valid[1];

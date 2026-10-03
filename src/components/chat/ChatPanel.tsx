@@ -109,15 +109,16 @@ export function checkIsContextCompressed(
 
   return messages.some((m) => {
     if (!m) return false;
-    if (m.isCompressed === true || m.contextCompressed === true) return true;
-    if (m.role === "system" && typeof m.content === "string") {
+    const msg = m as ChatMessageLike;
+    if (msg.isCompressed === true || msg.contextCompressed === true) return true;
+    if (msg.role === "system" && typeof msg.content === "string") {
       return (
-        m.content.startsWith("[PRIOR CONTEXT & PARAMETERS]") ||
-        m.content.includes("Prior Context:")
+        msg.content.startsWith("[PRIOR CONTEXT & PARAMETERS]") ||
+        msg.content.includes("Prior Context:")
       );
     }
-    if (Array.isArray(m.agentSteps)) {
-      return m.agentSteps.some(
+    if (Array.isArray(msg.agentSteps)) {
+      return msg.agentSteps.some(
         (step) =>
           step?.agent === "Compression" ||
           step?.compressed === true ||

@@ -112,6 +112,7 @@ export function CollaborativeNotes({
           avatarUrl: currentUserAvatar,
           cursorPosition: null,
           isTyping: false,
+          // eslint-disable-next-line react-hooks/purity
           lastActive: Date.now(),
         }),
       );

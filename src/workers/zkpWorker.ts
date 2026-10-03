@@ -80,14 +80,14 @@ async function generateProof(
   let wtns: { type: "mem" } | null = { type: "mem" };
 
   try {
-    await snarkjs.wtns.calculate(
+    await (snarkjs as any).wtns.calculate(
       { identityToken, expectedCommit },
       "/zkp/premium_membership.wasm",
       wtns,
       { memorySize: 0 },
     );
 
-    return await snarkjs.groth16.prove(
+    return await (snarkjs.groth16 as any).prove(
       "/zkp/premium_membership.zkey",
       wtns,
       undefined,

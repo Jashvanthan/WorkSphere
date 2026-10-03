@@ -192,7 +192,7 @@ export function SeatOccupancyHeatmap({
 
           <span className="flex items-center gap-1">
             <span className="h-2.5 w-2.5 rounded-sm bg-yellow-400" />
-            40–75%
+            40-75%
           </span>
 
           <span className="flex items-center gap-1">

@@ -636,6 +636,7 @@ export default function ReservationClient({ venue }: { venue: Venue }) {
           </form>
         </div>
       </div>
+    </div>
 
       <style jsx global>{`
         .reserve-input {
